@@ -2,6 +2,7 @@ package main.com.sg.classroster.dao;
 
 import main.com.sg.classroster.dto.Student;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +19,7 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
 
     @Override
     public List<Student> getAllStudents() {
-        return null;
+        return new ArrayList<Student>(students.values());
     }
 
     @Override
