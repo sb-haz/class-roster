@@ -1,25 +1,23 @@
 package main.com.sg.classroster.controller;
 
+import main.com.sg.classroster.ui.ClassRosterView;
 import main.com.sg.classroster.ui.UserIO;
 import main.com.sg.classroster.ui.UserIOConsoleImpl;
 
 public class ClassRosterController {
 
+    private ClassRosterView view = new ClassRosterView();
     private UserIO io = new UserIOConsoleImpl();
 
     public void run() {
+
         boolean keepGoing = true;
         int menuSelection;
 
         while (keepGoing) {
-            io.print("Main Menu");
-            io.print("1. List Student IDs");
-            io.print("2. Create new Student");
-            io.print("3. View a Student");
-            io.print("4. Remove a student");
-            io.print("5. Exit");
 
-            menuSelection = io.readInt("Please select from the above choices.", 1, 5);
+            menuSelection = getMenuSelection();
+
             switch (menuSelection) {
                 case 1:
                     io.print("LIST STUDENTS");
@@ -41,6 +39,10 @@ public class ClassRosterController {
             }
         }
         io.print("GOOD BYE");
+    }
+
+    private int getMenuSelection(){
+        return view.printMenuAndGetSelection();
     }
 
 }
