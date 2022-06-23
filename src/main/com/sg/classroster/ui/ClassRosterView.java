@@ -20,6 +20,11 @@ public class ClassRosterView {
         return io.readInt("Please select from the above choices.", 1, 5);
     }
 
+    // Get user choice
+    public String getStudentIdChoice() {
+        return io.readString("Please enter the Student ID.");
+    }
+
     // Add or Create Student
     public Student getNewStudentInfo() {
         String studentId = io.readString("Please enter Student ID");
@@ -42,8 +47,8 @@ public class ClassRosterView {
     }
 
     // Get or Display Student
-    public void displayStudent(Student student){
-        if (student != null){
+    public void displayStudent(Student student) {
+        if (student != null) {
             io.print(student.getStudentId());
             io.print(student.getFirstName() + " " + student.getLastName());
             io.print(student.getCohort());
@@ -56,10 +61,6 @@ public class ClassRosterView {
 
     public void displayDisplayStudentBanner() {
         io.print("=== Display Student ===");
-    }
-
-    public String getStudentIdChoice(){
-        return io.readString("Please enter the Student ID.");
     }
 
     // Display all Students
@@ -76,5 +77,19 @@ public class ClassRosterView {
 
     public void displayDisplayAllBanner() {
         io.print("=== Display All Students ===");
+    }
+
+    // Remove Student
+    public void displayRemoveResult(Student student) {
+        if (student != null) {
+            io.print("Student removed successfully");
+        } else {
+            io.print("No such student");
+        }
+        io.readString("Please hit enter to continue");
+    }
+
+    public void displayRemoveStudentBanner() {
+        io.print("=== Remove Student ===");
     }
 }

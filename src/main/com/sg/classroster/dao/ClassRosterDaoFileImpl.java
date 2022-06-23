@@ -13,8 +13,7 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
 
     @Override
     public Student addStudent(String studentId, Student student) {
-        Student prevStudent = students.put(studentId, student);
-        return prevStudent;
+        return students.put(studentId, student);
     }
 
     @Override
@@ -29,6 +28,6 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
 
     @Override
     public Student removeStudent(String studentId) {
-        return null;
+        return students.remove(studentId);
     }
 }
