@@ -92,4 +92,13 @@ public class ClassRosterView {
     public void displayRemoveStudentBanner() {
         io.print("=== Remove Student ===");
     }
+
+    // Unknown command and Exit
+    public void displayExitBanner() {
+        io.print("Good Bye!");
+    }
+
+    public void displayUnknownCommandBanner() {
+        io.print("Unknown Command.");
+    }
 }
