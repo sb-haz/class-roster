@@ -21,7 +21,7 @@ public class ClassRosterController {
         this.view = view;
     }
 
-    public void run() {
+    public void run() throws ClassRosterPersistenceException {
 
         boolean keepGoing = true;
         int menuSelection;
